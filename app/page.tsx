@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main>
+    <main style={{ padding: '20px', fontFamily: 'sans-serif' }}>
       <h1>App de Predicciones Deportivas</h1>
-      <p>API funcional en: /api/prediction</p>
+      <p>Tu API está funcionando en: <a href="/api/prediction">/api/prediction</a></p>
     </main>
   );
 }
