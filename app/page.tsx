@@ -24,9 +24,8 @@ export default function Home() {
   };
 
   return (
-    <main style={{minHeight:'100vh', background:'linear-gradient(to bottom right, #0f172a, #1e3a8a)', color:'white', padding:'20px', fontFamily:'sans-serif'}}>
+    <main style={{minHeight:'100vh', background:'linear-gradient(to bottom right, #0f172a, #1e3a8a)', color:'white', padding:'20px'}}>
       <h1 style={{textAlign:'center', fontSize:'28px', marginBottom:'30px'}}>⚽ Predicciones Deportivas</h1>
-      
       <div style={{maxWidth:'500px', margin:'0 auto'}}>
         <input
           type="text"
@@ -42,12 +41,7 @@ export default function Home() {
         >
           {loading ? 'Cargando...' : 'Obtener Predicción'}
         </button>
-
-        {result && (
-          <pre style={{marginTop:'30px', background:'#1e2937', padding:'15px', whiteSpace:'pre-wrap', overflow:'auto'}}>
-            {JSON.stringify(result, null, 2)}
-          </pre>
-        )}
+        {result && <pre style={{marginTop:'30px', background:'#1e2937', padding:'15px', whiteSpace:'pre-wrap'}}>{JSON.stringify(result, null, 2)}</pre>}
       </div>
     </main>
   );
