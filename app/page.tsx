@@ -30,13 +30,14 @@ export default function Home() {
       minHeight: '100vh',
       background: 'linear-gradient(to bottom right, #0f172a, #1e3a8a, #0f172a)',
       color: 'white',
-      padding: '1.5rem'
+      padding: '24px',
+      fontFamily: 'system-ui, sans-serif'
     }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '3rem', paddingTop: '2rem' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px', paddingTop: '32px' }}>
           <h1 style={{ 
-            fontSize: '3rem', 
-            fontWeight: 'bold',
+            fontSize: '2.8rem', 
+            fontWeight: '700',
             background: 'linear-gradient(to right, #60a5fa, #22d3ee)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -47,13 +48,13 @@ export default function Home() {
         </div>
 
         <div style={{
-          backgroundColor: 'rgba(15, 23, 42, 0.7)',
-          borderRadius: '1rem',
-          padding: '2rem',
+          backgroundColor: 'rgba(15, 23, 42, 0.85)',
+          borderRadius: '16px',
+          padding: '32px',
           border: '1px solid #334155',
-          marginBottom: '2.5rem'
+          marginBottom: '32px'
         }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <input
               type="text"
               value={matchId}
@@ -63,8 +64,8 @@ export default function Home() {
                 flex: 1,
                 backgroundColor: '#1e2937',
                 border: '1px solid #475569',
-                borderRadius: '0.75rem',
-                padding: '1rem 1.5rem',
+                borderRadius: '12px',
+                padding: '16px 20px',
                 fontSize: '1.1rem',
                 color: 'white'
               }}
@@ -75,11 +76,10 @@ export default function Home() {
               style={{
                 backgroundColor: loading ? '#475569' : '#2563eb',
                 color: 'white',
-                padding: '1rem 2.5rem',
-                borderRadius: '0.75rem',
+                padding: '16px 32px',
+                borderRadius: '12px',
                 fontWeight: '600',
-                fontSize: '1.1rem',
-                cursor: loading ? 'not-allowed' : 'pointer'
+                fontSize: '1.1rem'
               }}
             >
               {loading ? 'Consultando...' : 'Obtener Predicción'}
@@ -89,19 +89,19 @@ export default function Home() {
 
         {result && (
           <div style={{
-            backgroundColor: 'rgba(15, 23, 42, 0.7)',
-            borderRadius: '1rem',
-            padding: '2rem',
+            backgroundColor: 'rgba(15, 23, 42, 0.85)',
+            borderRadius: '16px',
+            padding: '32px',
             border: '1px solid #334155'
           }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>📊 Resultado</h2>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '16px' }}>📊 Resultado</h2>
             <pre style={{
-              backgroundColor: 'rgba(0,0,0,0.5)',
-              padding: '1rem',
-              borderRadius: '0.75rem',
+              backgroundColor: 'rgba(0,0,0,0.6)',
+              padding: '20px',
+              borderRadius: '12px',
               overflow: 'auto',
-              whiteSpace: 'pre-wrap',
-              maxHeight: '500px'
+              maxHeight: '500px',
+              whiteSpace: 'pre-wrap'
             }}>
               {JSON.stringify(result, null, 2)}
             </pre>
