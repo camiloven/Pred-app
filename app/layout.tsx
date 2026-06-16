@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Predicciones Deportivas',
-  description: 'Predicciones de partidos',
+  description: 'Predicciones en tiempo real',
 };
 
 export default function RootLayout({
