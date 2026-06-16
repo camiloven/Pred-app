@@ -26,28 +26,61 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white p-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12 pt-8">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+    <main style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(to bottom right, #0f172a, #1e3a8a, #0f172a)',
+      color: 'white',
+      padding: '1.5rem'
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem', paddingTop: '2rem' }}>
+          <h1 style={{ 
+            fontSize: '3rem', 
+            fontWeight: 'bold',
+            background: 'linear-gradient(to right, #60a5fa, #22d3ee)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
             ⚽ Predicciones Deportivas
           </h1>
-          <p className="text-xl text-slate-400">Predicciones en tiempo real de partidos</p>
+          <p style={{ fontSize: '1.25rem', color: '#94a3b8' }}>Predicciones en tiempo real</p>
         </div>
 
-        <div className="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-8 border border-slate-700 shadow-xl mb-10">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div style={{
+          backgroundColor: 'rgba(15, 23, 42, 0.7)',
+          borderRadius: '1rem',
+          padding: '2rem',
+          border: '1px solid #334155',
+          marginBottom: '2.5rem'
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <input
               type="text"
               value={matchId}
               onChange={(e) => setMatchId(e.target.value)}
               placeholder="ID del partido (ej: 123456)"
-              className="flex-1 bg-slate-800 border border-slate-600 rounded-xl px-6 py-4 text-lg focus:outline-none focus:border-blue-500 transition-colors"
+              style={{
+                flex: 1,
+                backgroundColor: '#1e2937',
+                border: '1px solid #475569',
+                borderRadius: '0.75rem',
+                padding: '1rem 1.5rem',
+                fontSize: '1.1rem',
+                color: 'white'
+              }}
             />
             <button
               onClick={fetchPrediction}
               disabled={loading}
-              className="bg-blue-600 hover:bg-blue-500 disabled:bg-slate-700 px-10 py-4 rounded-xl font-semibold text-lg transition-all active:scale-95"
+              style={{
+                backgroundColor: loading ? '#475569' : '#2563eb',
+                color: 'white',
+                padding: '1rem 2.5rem',
+                borderRadius: '0.75rem',
+                fontWeight: '600',
+                fontSize: '1.1rem',
+                cursor: loading ? 'not-allowed' : 'pointer'
+              }}
             >
               {loading ? 'Consultando...' : 'Obtener Predicción'}
             </button>
@@ -55,9 +88,21 @@ export default function Home() {
         </div>
 
         {result && (
-          <div className="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-8 border border-slate-700">
-            <h2 className="text-2xl font-semibold mb-4">📊 Resultado</h2>
-            <pre className="bg-black/50 p-4 rounded-xl text-sm overflow-auto whitespace-pre-wrap max-h-96">
+          <div style={{
+            backgroundColor: 'rgba(15, 23, 42, 0.7)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            border: '1px solid #334155'
+          }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>📊 Resultado</h2>
+            <pre style={{
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              padding: '1rem',
+              borderRadius: '0.75rem',
+              overflow: 'auto',
+              whiteSpace: 'pre-wrap',
+              maxHeight: '500px'
+            }}>
               {JSON.stringify(result, null, 2)}
             </pre>
           </div>
